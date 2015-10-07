@@ -53,7 +53,7 @@ if __name__ == "__main__":
     """
 
     # gordonsun.me mariadb backup
-    schedule.every().day.do(start_service, '966e0798-ef51-49e9-811f-a06fcb69303c')
+    schedule.every().day.do(start_service, 'fbb5646e-f5b6-428d-8846-aff09469349f')
 
     # craigsmenu prod to dev sync
     schedule.every().day.do(start_service, '19ba2002-8a97-414c-a5da-c8fd3d42412a')
