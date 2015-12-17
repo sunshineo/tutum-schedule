@@ -21,9 +21,10 @@ def start_service(uuid):
     service = tutum.Service.fetch(uuid)
     service.start()
 
+@catch_exceptions
 def stop_service(uuid):
     """
-    Wrapper function to start a stopped Tutum Service by its UUID.
+    Wrapper function to stopped a Tutum Service by its UUID.
     """
     service = tutum.Service.fetch(uuid)
     service.stop()
