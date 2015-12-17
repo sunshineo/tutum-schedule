@@ -68,8 +68,8 @@ if __name__ == "__main__":
     schedule.every().day.do(start_service, 'eb3aeb88-c363-4bad-8060-7fbcb5d50ca7')
 
     # nolostdogs.org crawler
-    schedule.every().hour.do(stop_service, 'abb50164-83b2-43a5-80e8-f468eecbd8f4')
-    schedule.every().hour.do(start_service, 'abb50164-83b2-43a5-80e8-f468eecbd8f4')
+    schedule.every(15).minutes.do(stop_service, 'abb50164-83b2-43a5-80e8-f468eecbd8f4')
+    schedule.every(15).minutes.do(start_service, 'abb50164-83b2-43a5-80e8-f468eecbd8f4')
 
     while True:
         schedule.run_pending()
