@@ -70,8 +70,8 @@ if __name__ == "__main__":
 
     # nolostdogs.org crawler JavaScript
     # This service occationally just cannot stop. So we try to stop it every time before we try to start it.
-    schedule.every(15).minutes.do(stop_service, 'abb50164-83b2-43a5-80e8-f468eecbd8f4')
-    schedule.every(15).minutes.do(start_service, 'abb50164-83b2-43a5-80e8-f468eecbd8f4')
+    schedule.every(15).minutes.do(stop_service, 'a4a376be-24df-4668-91fd-a0ba56eacc70')
+    schedule.every(15).minutes.do(start_service, 'a4a376be-24df-4668-91fd-a0ba56eacc70')
     # nolostdogs.org crawler Python
     schedule.every(15).minutes.do(start_service, 'a4a49883-82c1-4e9f-bdcd-e38ec78787cb')
 
