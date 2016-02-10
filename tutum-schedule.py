@@ -1,7 +1,7 @@
 import functools
 import schedule
 import time
-import tutum
+import dockercloud
 import logging
 import sys
 
@@ -25,11 +25,11 @@ def catch_exceptions(job_func):
 @catch_exceptions
 def start_service(uuid, note):
     """
-    Wrapper function to start a stopped Tutum Service by its UUID.
+    Wrapper function to start a stopped dockercloud Service by its UUID.
     """
     log.info("Start service: " + note)
     log.info("Get service by uuid: " + uuid)
-    service = tutum.Service.fetch(uuid)
+    service = dockercloud.Service.fetch(uuid)
     log.info("Successfully got the service.")
     log.info("Starting the service.")
     service.start()
@@ -38,11 +38,11 @@ def start_service(uuid, note):
 @catch_exceptions
 def stop_service(uuid, note):
     """
-    Wrapper function to stopped a Tutum Service by its UUID.
+    Wrapper function to stopped a dockercloud Service by its UUID.
     """
     log.info("Stop service: " + note)
     log.info("Get service by uuid: " + uuid)
-    service = tutum.Service.fetch(uuid)
+    service = dockercloud.Service.fetch(uuid)
     log.info("Successfully got the service.")
     log.info("Stopping the service.")
     service.stop()
@@ -51,11 +51,11 @@ def stop_service(uuid, note):
 @catch_exceptions
 def create_service(**kwargs):
     """
-    Wrapper function to create a new Tutum Service.
+    Wrapper function to create a new dockercloud Service.
 
-    For possible parameters, see https://docs.tutum.co/v2/api/?python#create-a-new-service.
+    For possible parameters, see https://docs.dockercloud.co/v2/api/?python#create-a-new-service.
     """
-    service = tutum.Service.create(**kwargs)
+    service = dockercloud.Service.create(**kwargs)
     service.save()
     service.start()
 
@@ -66,7 +66,7 @@ if __name__ == "__main__":
 
     Examples:
 
-    If you have already created a Service on Tutum with the UUID of 
+    If you have already created a Service on dockercloud with the UUID of 
     '2463a0c3-bacd-4195-8493-bcbb49681f4a', you can start it every
     hour with:
     schedule.every().hour.do(start_service, '2463a0c3-bacd-4195-8493-bcbb49681f4a')
@@ -74,7 +74,7 @@ if __name__ == "__main__":
     If you would like to create a Service to be run every day at 2:15 AM, set
     the schedule with:
     schedule.every(5).day.at("2:15").do(create_service, 
-                                        image='tutum.co/user/my-job', 
+                                        image='user/my-job', 
                                         name='created',
                                         autodestroy="ALWAYS")
     """
