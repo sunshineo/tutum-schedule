@@ -80,19 +80,19 @@ if __name__ == "__main__":
     """
 
     # gordonsun.me mariadb backup
-    schedule.every().day.do(start_service, 'fbb5646e-f5b6-428d-8846-aff09469349f', 'gordonsun.me mariadb backup daily')
+    schedule.every(10).day.do(start_service, 'e0c656be-89f6-42d4-81e8-8ebba44c19f2', 'gordonsun.me mariadb backup daily')
 
     # craigsmenu prod to dev sync
-    schedule.every().day.do(start_service, '19ba2002-8a97-414c-a5da-c8fd3d42412a', 'craigsmenu prod to dev sync daily')
+    schedule.every().day.do(start_service, 'ce61d5c7-fe9d-4535-a17b-4f3edac2f134', 'craigsmenu prod to dev sync daily')
     # craigsmenu prod backup
-    schedule.every().day.do(start_service, 'eb3aeb88-c363-4bad-8060-7fbcb5d50ca7', 'craigsmenu prod backup daily')
+    schedule.every().day.do(start_service, '7e1857be-99e4-4581-bb6f-647d4d3d9c6e', 'craigsmenu prod backup daily')
 
     # nolostdogs.org crawler JavaScript
     # This service occationally just cannot stop. So we try to stop it every time before we try to start it.
-    schedule.every(15).minutes.do(stop_service, 'a4a376be-24df-4668-91fd-a0ba56eacc70', 'nld-crawler-js stop (may fail) every 15 minutes')
-    schedule.every(15).minutes.do(start_service, 'a4a376be-24df-4668-91fd-a0ba56eacc70', 'nld-crawler-js start every 15 minutes')
+    schedule.every(15).minutes.do(stop_service, '0cdbba7a-ce6b-4ca3-8f08-8135f0cede71', 'nld-crawler-js stop (may fail) every 15 minutes')
+    schedule.every(15).minutes.do(start_service, '0cdbba7a-ce6b-4ca3-8f08-8135f0cede71', 'nld-crawler-js start every 15 minutes')
     # nolostdogs.org crawler Python
-    schedule.every(15).minutes.do(start_service, '7b958fe9-dfa4-4dad-acdc-5d8c7a212032', 'nld-crawler-python every 15 minutes')
+    schedule.every(15).minutes.do(start_service, 'af40dbce-71ab-42c4-9c06-fdb1ac933552', 'nld-crawler-python every 15 minutes')
 
     while True:
         schedule.run_pending()
