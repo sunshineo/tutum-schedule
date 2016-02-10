@@ -80,7 +80,7 @@ if __name__ == "__main__":
     """
 
     # gordonsun.me mariadb backup
-    schedule.every(10).day.do(start_service, 'e0c656be-89f6-42d4-81e8-8ebba44c19f2', 'gordonsun.me mariadb backup daily')
+    schedule.every(10).days.do(start_service, 'e0c656be-89f6-42d4-81e8-8ebba44c19f2', 'gordonsun.me mariadb backup every 10 day')
 
     # craigsmenu prod to dev sync
     schedule.every().day.do(start_service, 'ce61d5c7-fe9d-4535-a17b-4f3edac2f134', 'craigsmenu prod to dev sync daily')
