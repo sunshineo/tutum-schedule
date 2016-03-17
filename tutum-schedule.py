@@ -92,6 +92,7 @@ if __name__ == "__main__":
     schedule.every(15).minutes.do(stop_service, '0cdbba7a-ce6b-4ca3-8f08-8135f0cede71', 'nld-crawler-js stop (may fail) every 15 minutes')
     schedule.every(15).minutes.do(start_service, '0cdbba7a-ce6b-4ca3-8f08-8135f0cede71', 'nld-crawler-js start every 15 minutes')
     # nolostdogs.org crawler Python
+    schedule.every(15).minutes.do(stop_service, 'af40dbce-71ab-42c4-9c06-fdb1ac933552', 'nld-crawler-python stop (may fail) every 15 minutes')
     schedule.every(15).minutes.do(start_service, 'af40dbce-71ab-42c4-9c06-fdb1ac933552', 'nld-crawler-python every 15 minutes')
 
     while True:
