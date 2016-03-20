@@ -87,10 +87,6 @@ if __name__ == "__main__":
     # craigsmenu prod backup
     schedule.every().day.do(start_service, '7e1857be-99e4-4581-bb6f-647d4d3d9c6e', 'craigsmenu prod backup daily')
 
-    # nolostdogs.org crawler JavaScript
-    # This service occationally just cannot stop. So we try to stop it every time before we try to start it.
-    schedule.every(15).minutes.do(stop_service, '0cdbba7a-ce6b-4ca3-8f08-8135f0cede71', 'nld-crawler-js stop (may fail) every 15 minutes')
-    schedule.every(15).minutes.do(start_service, '0cdbba7a-ce6b-4ca3-8f08-8135f0cede71', 'nld-crawler-js start every 15 minutes')
     # nolostdogs.org crawler Python
     schedule.every(15).minutes.do(stop_service, 'af40dbce-71ab-42c4-9c06-fdb1ac933552', 'nld-crawler-python stop (may fail) every 15 minutes')
     schedule.every(15).minutes.do(start_service, 'af40dbce-71ab-42c4-9c06-fdb1ac933552', 'nld-crawler-python every 15 minutes')
