@@ -82,11 +82,6 @@ if __name__ == "__main__":
     # gordonsun.me mariadb backup
     schedule.every(10).days.do(start_service, 'e0c656be-89f6-42d4-81e8-8ebba44c19f2', 'gordonsun.me mariadb backup every 10 day')
 
-    # craigsmenu prod to dev sync
-    schedule.every().day.do(start_service, 'ce61d5c7-fe9d-4535-a17b-4f3edac2f134', 'craigsmenu prod to dev sync daily')
-    # craigsmenu prod backup
-    schedule.every().day.do(start_service, '7e1857be-99e4-4581-bb6f-647d4d3d9c6e', 'craigsmenu prod backup daily')
-
     # nolostdogs.org crawler Python
     schedule.every(15).minutes.do(stop_service, 'af40dbce-71ab-42c4-9c06-fdb1ac933552', 'nld-crawler-python stop (may fail) every 15 minutes')
     schedule.every(15).minutes.do(start_service, 'af40dbce-71ab-42c4-9c06-fdb1ac933552', 'nld-crawler-python every 15 minutes')
