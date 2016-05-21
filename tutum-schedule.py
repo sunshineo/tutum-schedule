@@ -79,12 +79,12 @@ if __name__ == "__main__":
                                         autodestroy="ALWAYS")
     """
 
-    # gordonsun.me mariadb backup
-    schedule.every(10).days.do(start_service, 'e0c656be-89f6-42d4-81e8-8ebba44c19f2', 'gordonsun.me mariadb backup every 10 day')
-
-    # nolostdogs.org crawler Python
-    schedule.every(15).minutes.do(stop_service, 'af40dbce-71ab-42c4-9c06-fdb1ac933552', 'nld-crawler-python stop (may fail) every 15 minutes')
-    schedule.every(15).minutes.do(start_service, 'af40dbce-71ab-42c4-9c06-fdb1ac933552', 'nld-crawler-python every 15 minutes')
+    # craigsmenu blog mariadb backup
+    schedule.every().days.do(start_service, 'd764ea9c-70e8-4102-9e08-b982abc071ca', 'craigsmenu blog mariadb backup every day')
+    # craigsmenu prod backup
+    schedule.every().day.do(start_service, '3865c9f0-2418-4f04-9a2b-3f006650c1cb', 'craigsmenu prod backup daily')
+    # craigsmenu prod to dev sync
+    schedule.every().day.do(start_service, '3eaead43-e508-49cb-845b-f920a7f7ef68', 'craigsmenu prod to dev sync daily')
 
     while True:
         schedule.run_pending()
