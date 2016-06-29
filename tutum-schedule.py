@@ -79,9 +79,6 @@ if __name__ == "__main__":
                                         autodestroy="ALWAYS")
     """
 
-    # gordonsun.me mariadb backup
-    schedule.every(10).days.do(start_service, 'e0c656be-89f6-42d4-81e8-8ebba44c19f2', 'gordonsun.me mariadb backup every 10 day')
-
     # nolostdogs.org crawler Python
     schedule.every(15).minutes.do(stop_service, 'af40dbce-71ab-42c4-9c06-fdb1ac933552', 'nld-crawler-python stop (may fail) every 15 minutes')
     schedule.every(15).minutes.do(start_service, 'af40dbce-71ab-42c4-9c06-fdb1ac933552', 'nld-crawler-python every 15 minutes')
