@@ -85,6 +85,8 @@ if __name__ == "__main__":
     schedule.every().day.do(start_service, '3865c9f0-2418-4f04-9a2b-3f006650c1cb', 'craigsmenu prod backup daily')
     # craigsmenu prod to dev sync
     schedule.every().day.do(start_service, '3eaead43-e508-49cb-845b-f920a7f7ef68', 'craigsmenu prod to dev sync daily')
+    # craigsmenu prod yelp sync
+    schedule.every().day.do(start_service, 'd9b0ea45-2435-48ec-9898-259196825b4d', 'craigsmenu prod yelp sync daily')
 
     while True:
         schedule.run_pending()
